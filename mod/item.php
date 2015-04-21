@@ -22,7 +22,6 @@ require_once('include/attach.php');
 
 function item_post(&$a) {
 
-
 	// This will change. Figure out who the observer is and whether or not
 	// they have permission to post here. Else ignore the post.
 
@@ -399,6 +398,7 @@ function item_post(&$a) {
 		$verb              = notags(trim($_REQUEST['verb']));
 		$title             = escape_tags(trim($_REQUEST['title']));
 		$body              = trim($_REQUEST['body']);
+		$body              .= trim($_REQUEST['attachment']);
 		$postopts          = '';
 
 		$private = ( 
@@ -602,7 +602,7 @@ function item_post(&$a) {
 		if($results) {
 
 			// Set permissions based on tag replacements
-			set_linkified_perms($results, $str_contact_allow, $str_group_allow, $profile_uid, $parent_item);
+			set_linkified_perms($results, $str_contact_allow, $str_group_allow, $profile_uid, $parent_item, $private);
 
 			$post_tags = array();
 			foreach($results as $result) {

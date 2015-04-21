@@ -1102,8 +1102,6 @@ nav .acpopup {
 
 .required {
 	color: #ff0000;
-	font-size: 1.8rem;
-	margin-left: 5px;
 }
 
 
@@ -1586,11 +1584,14 @@ img.mail-list-sender-photo {
 	font-weight: bold;
 }
 
-.jothidden >input, .jothidden >input {
-	border: 1px solid #fff;
+.jothidden > input {
+	border: 1px solid $bgcolour;
+	background-color: $bgcolour;
 }
-.jothidden >input:hover, .jothidden >input:focus {
+.jothidden > input:hover,
+.jothidden > input:focus {
 	border: 1px solid #cccccc;
+	background-color: #fff;
 }
 
 #profile-jot-text {
@@ -1723,7 +1724,8 @@ img.mail-list-sender-photo {
 	font-size: 0.833em;
 }
 
-.wall-item-content {
+.wall-item-content,
+.page-body {
 	font-size: $font_size;
 	clear: both;
 }
@@ -1855,6 +1857,10 @@ nav .dropdown-menu {
 	color: $nav_active_icon_colour;
 }
 
+.page-title {
+	margin: 7px 0px;
+}
+
 .section-title-wrapper {
 	padding: 7px 10px;
 	background-color: $item_colour;
@@ -1922,14 +1928,15 @@ nav .dropdown-menu {
 }
 
 [id^="cloud-index-"]:hover td,
-.cloud-index-active, {
+.cloud-index-active {
 	background-color: $item_colour;
 }
 
-[id^="webpage-list-item"]:hover td {
+[id^="webpage-list-item-"]:hover td,
+[id^="menu-list-item-"]:hover td,
+[id^="mitem-list-item-"]:hover td {
 	background-color: $item_colour;
 }
-
 
 nav ul li .undefined, 
 nav ul li .notify-seen,
@@ -2211,8 +2218,8 @@ aside .nav > li > a:hover, aside .nav > li > a:focus {
 
 /* Modified original CSS to match input in Redbasic */
 .jothidden .bootstrap-tagsinput {
-	border-color:#fff;
-	background-color: #fff;
+	border-color: $bgcolour;
+	background-color: $bgcolour;
 	box-shadow: none;
 	display: inline-block;
 	border-radius: $radiuspx;
@@ -2226,7 +2233,8 @@ aside .nav > li > a:hover, aside .nav > li > a:focus {
 }
 
 .jothidden .bootstrap-tagsinput:hover, .jothidden .bootstrap-tagsinput:focus {
-	border: 1px solid #cccccc;
+	border: 1px solid #ccc;
+	background-color: #fff;
 }
 
 /* Abusing theme-green is less work than makeing a new new one */
